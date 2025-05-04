@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  java-app:
+    build: .
+    image: nginx-app
+    container_name: nginx-app
+    ports:
+      - "8080:8080"
+    networks:
+      - nginx-network
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      java-app:
+        condition: service_started
+    networks:
+      - nginx-network
+
+networks:
+  nginx-network:
+    driver: bridge

@@ -36,8 +36,10 @@ project/
 
 ## Запуск проекта
 
-1. Клонируйте репозиторий
-2. Запустите приложение: docker-compose up
+1. Клонируйте репозиторий:
+
+    ``` git clone https://github.com/LudoEd112/NginxTest.git ```
+2. Запустите приложение: ```docker-compose up```
 
 ## API эндпоинты
 
@@ -59,9 +61,8 @@ project/
 
 ## Тестирование
  Для тестирования можно использовать любой HTTP-клиент (например, curl или Postman):
- ```
- curl http://localhost/nginx-app/users
-```
+    
+``` curl http://localhost/nginx-app/users ```
 
 ## Авторы
 - Такмаков Дмитрий - Основной разработчик
